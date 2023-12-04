@@ -1,0 +1,63 @@
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ </head>
+ 
+ <body>
+  <iframe id="the_iframe" width="100%" height="210px" frameborder="0" style="border: 0;"></iframe>  <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpoetic-choux-da9fed.netlify.app&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=recent+visitor&amp;edge_flat=false"></a> 
+  <script type="text/javascript" id="dcoder_script">/*
+  Inspired from - https://dribbble.com/shots/6713486-2-FREE-Touch-Gesture-Animations-interactions-for-after-effects
+*/
+const timeline = new TimelineLite({ paused: true, reversed: true }),
+      $title = $(".cards .title"),
+      $card = $(".card-wrapper .card"),
+      $transactions = $(".transactions"),
+      transitionSpeed = .5;
+
+timeline.to(".card-wrapper", transitionSpeed, {className: "+=active"}, 0)
+      .to(".cards", transitionSpeed, {height: "140px", "backgroundColor": "#f7f7f7"}, 0)
+      .to(".card", transitionSpeed, {top: 10}, 0)
+      .to(".card:not(:first-child)", 0.1, {"boxShadow": "none"}, 0)
+      .to(".transactions", transitionSpeed, {top: "140px", opacity: 1}, 0);
+
+$card.on("click", function(){
+  if(timeline.reversed()){
+    $(this).css("z-index", "2");
+    timeline.play();
+  } else {
+    timeline.reverse();
+    timeline.eventCallback("onReverseComplete", () => {
+      $(this).css("z-index", "0");
+    }); 
+  } 
+});
+
+const textElement = document.getElementById("text");
+const copyButton = document.getElementById("copy");
+
+const copyText = (e) => {
+  window.getSelection().selectAllChildren(textElement);
+  document.execCommand("copy");
+  e.target.setAttribute("tooltip", "Copied! ✅");
+};
+
+
+</script>
+ 
+<iframe src="https://twitter-clone-mlatka9.vercel.app/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="587px" width="100%" allowfullscreen></iframe><script type="text/javascript" id="dcoder_script">var urls = [
+ 'https://ytroulette.com/?', 
+       'https://www.toprevenuegate.com/ze0h476u?key=6652d5c04bb69c8349a65e78d2b098a2', 
+  'https://glugherg.net/4/6659427',
+ 'https://ytroulette.com/?', 
+  'https://glugherg.net/4/6659427',
+   
+    
+  
+];
+var seconds = 5;
+function openNext(){
+    document.getElementById('the_iframe').src = urls.shift();
+    if(urls.length)setTimeout('openNext()',seconds*1000);
+}
+openNext();</script></body></html>
